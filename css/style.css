@@ -420,6 +420,10 @@ img {
   .main {
     padding: 20px;
   }
+
+  input {
+    font-size: 0.9em;
+  }
 }
 
 @media(max-width: 620px) {
