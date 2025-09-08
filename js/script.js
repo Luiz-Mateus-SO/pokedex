@@ -154,14 +154,40 @@ function createNameAndTypePokemonContainer(infoContainerEl, name, type) {
   nameContainer.appendChild(typeEl);
 }
 
-function createPokemonSprite(containerEl, showdownUrl, artworkUrl) {
+import { createPokemonElements } from "./helpers.js";
+
+// containerEl: elemento onde a imagem será inserida
+// showdownUrl: URL do sprite animado
+// artworkUrl: URL do artwork oficial
+// useShowdownSprites: boolean indicando qual imagem usar
+export function createPokemonSprite(containerEl, showdownUrl, artworkUrl, useShowdownSprites) {
   const img = createPokemonElements('img', 'pokemon-image');
 
   img.dataset.showdown = showdownUrl;
   img.dataset.artwork = artworkUrl;
 
-  img.src = useShowdownSprites ? showdownUrl : artworkUrl;
+  if (useShowdownSprites) {
+    // Se estiver usando sprites animados
+    img.src = showdownUrl;
+  } else {
+    // Usando artwork otimizado local
+    // Exemplo: artworkUrl = "pikachu.png"
+    const baseName = artworkUrl.split('/').pop().split('.')[0]; // "pikachu"
+    const ext = artworkUrl.split('.').pop(); // "png" ou "jpg"
 
+    img.src = `./img/optimized/${baseName}-360w.${ext}`;
+    img.srcset = `
+      ./img/optimized/${baseName}-360w.${ext} 360w,
+      ./img/optimized/${baseName}-720w.${ext} 720w,
+      ./img/optimized/${baseName}-1080w.${ext} 1080w
+    `;
+    img.sizes = `(max-width: 600px) 360px, (max-width: 1200px) 720px, 1080px`;
+  }
+
+  // Lazy loading para performance
+  img.loading = 'lazy';
+
+  // fallback caso a imagem não carregue
   img.onerror = () => {
     img.src = artworkUrl;
   };
