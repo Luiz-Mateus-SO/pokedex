@@ -420,6 +420,7 @@ img {
   .main {
     grid-template-columns: 1fr;
     padding: 20px;
+    justify-content: center;
   }
 
   input {
