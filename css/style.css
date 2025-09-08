@@ -413,7 +413,11 @@ img {
 }
 
 @media(max-width: 798px) {
-  .container {
+  .header {
+    padding: 20px;
+  }
+  
+  .main {
     padding: 20px;
   }
 }
