@@ -239,7 +239,7 @@ img {
 
 .pokemon-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(219px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   padding: 0;
   gap: 40px;
   color: white;
@@ -410,6 +410,10 @@ img {
   .pokemon-info__container div {
     gap: 6px;
   }
+
+  .pokemon-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media(max-width: 798px) {
@@ -423,6 +427,10 @@ img {
     justify-content: center;
   }
 
+   .pokemon-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
   input {
     font-size: 0.9em;
   }
@@ -432,5 +440,9 @@ img {
   .header {
     justify-content: center;
     gap: 20px;
+  }
+
+   .pokemon-list {
+    grid-template-columns: 1fr;
   }
 }
