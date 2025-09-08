@@ -1,0 +1,7 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/miubtqkc/public_html/pokedex.layoutandmedia.com.br
+    # Remove todos os arquivos, incluindo ocultos
+    - /bin/rm -rf $DEPLOYPATH/{*,.[!.]*}
+    # Copia todos os arquivos, incluindo ocultos
+    - /bin/cp -R .[!.]* * $DEPLOYPATH/
