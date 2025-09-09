@@ -95,15 +95,17 @@ async function handleSearch(inputText) {
 }
 
 const artChangeBtn = document.querySelector('.art-change__btn');
+let useShowdownSpritesLocal = useShowdownSprites;
+
 artChangeBtn.addEventListener('click', () => {
-  useShowdownSprites = !useShowdownSprites;
+  useShowdownSpritesLocal = !useShowdownSpritesLocal;
 
   document.querySelectorAll('.pokemon-image').forEach(img => {
-    img.src = useShowdownSprites ? img.dataset.showdown : img.dataset.artwork;
-    if(!useShowdownSprites) img.style.width = '200px';
-    else img.style.width = '';
+    img.src = useShowdownSpritesLocal ? img.dataset.showdown : img.dataset.artwork;
+    img.style.width = useShowdownSpritesLocal ? '' : '200px';
   });
 });
+
 
 window.addEventListener('DOMContentLoaded', async () => {
   await initPokemonList();
