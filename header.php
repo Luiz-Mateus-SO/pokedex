@@ -7,7 +7,7 @@
   <meta property="og:description" content="Uma simples pokedex para tirar todas suas dúvidas.">
   <meta property="og:url" content="https://www.pokedex.layoutandmedia.com.br/">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="./img/ogimage.webp">
+ <meta property="og:image" content="https://www.pokedex.layoutandmedia.com.br/img/ogimage.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <title>Pokedex</title>
