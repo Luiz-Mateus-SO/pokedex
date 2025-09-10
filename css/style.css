@@ -431,6 +431,10 @@ img {
     grid-template-columns: 1fr 1fr;
   }
 
+  .menu-list {
+    margin-bottom: 0;
+  }
+
   input {
     font-size: 0.9em;
   }
@@ -445,5 +449,9 @@ img {
    .pokemon-list {
     grid-template-columns: 1fr;
     justify-items: center;
+  }
+
+  .menu-list {
+    margin-bottom: 0;
   }
 }
