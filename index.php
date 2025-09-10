@@ -1,4 +1,4 @@
-<?php include 'header.php'; ?>
+<?php include './header.php'; ?>
   
   <main class=" container main">
     <h1 class="title">Pokedéx</h1>
@@ -30,4 +30,4 @@
     <button class="load-more">Ver mais</button>
   </div>
 
- <?php include 'footer.php'; ?>
+ <?php include './footer.php'; ?>
