@@ -10,15 +10,15 @@ Options -Indexes
 
 # Proteger arquivos sensíveis
 <FilesMatch "(\.(env|ini|log|sh|bak|sql|zip|tar|gz))$">
-  Order allow,deny
-  Deny from all
+  Require all denied
 </FilesMatch>
 
-# Impedir que alguém execute scripts PHP em pastas de upload
-<FilesMatch "\.(php|php5|phtml)$">
-  Order allow,deny
-  Deny from all
-</FilesMatch>
+# Impedir que alguém execute scripts PHP em pastas de upload (substitua 'uploads' pelo nome da sua pasta de envio)
+<Directory "uploads">
+  <FilesMatch "\.(php|php5|phtml)$">
+    Require all denied
+  </FilesMatch>
+</Directory>
 
 # =============================
 # PERFORMANCE / CACHE
